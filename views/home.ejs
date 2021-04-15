@@ -1,10 +1,15 @@
-<% - include('partials/header') -%>
+<%- include('partials/header') -%>
 
 <h1>Home</h1>
 <p>
   <%= homeContent %>
 </p>
 
-<% if (let=i; i < posts.length; i++) { %>
-<% console.log(posts[i].title) %>
-<% } %>; <% - include('partials/footer') -%>
+
+<% posts.forEach(post => { %>
+<h1> <%= post.title %> </h1>
+<p> <%= post.content %> </p>
+<% }); %>
+
+
+<%- include('partials/footer') -%>
